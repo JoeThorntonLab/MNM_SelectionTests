@@ -1,0 +1,31 @@
+README
+
+HYPHY batch files to run BS+MNM and BS+MNM+k2 models
+
+i)   BranchSites_delta.bf: YangNielsenBranchSiteModel with delta
+ii)  BranchSites_delta_kappa2.bf: YangNielsenBranchSiteModel with delta, kappa1 and kappa2  
+
+
+Example model run 
+
+<path to HYPHYMP> BranchSites_delta.bf
+
+Adjust the path structure depending on where the executable HYPHYMP is installed.  
+
+Input alignment file should be formatted as you normally would for a HYPHY run, with tree included at the end. 
+
+Example input alignment file:
+
+#hg18
+ATGGGCATGAGTAGCTTGAAACTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#panTro2
+ATGGGCATGAGTAGCTTGAAACTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#rheMac2
+ATGGGCATGAGTAGCTTGAAATTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#mm8
+ATGGGCATGAGCAGCCTGAAATTGCTGAAATATGTTCTGTTTATCTTTAACTTGCTTTTTTGGGTCTGTG
+#rn4
+ATGGGCATGAGCAGCCTGAAATTGCTGAAATATGTTCTGTTTTTCTTTAACTTTCTTTTTTGGGTCTGTG
+#canFam2
+ATGGGCATGAGTGGCTTGAAGTTGCTGAAGTACGTTCTGTTTTTCTTCAACTTGCTTTTTTGGTTCTGTG
+(((hg18, panTro2),rheMac2),(mm8,rn4),canFam2);
