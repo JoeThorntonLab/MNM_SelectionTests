@@ -34,8 +34,12 @@ ii)  BranchSites_delta_kappa2.bf: YangNielsenBranchSiteModel with delta and kapp
 
 Example 
 
+For BS+MNM Selection tests:
 <path to HYPHYMP> BranchSites_delta.null.bf
 <path to HYPHYMP> BranchSites_delta_alt.bf
+Conduct LRT using chi-square dist, 1 df
+
+For BS+MNM+k2 null model estimations:
 <path to HYPHYMP> BranchSites_delta_kappa2.bf
 
 Adjust the path structure depending on where the executable HYPHYMP is installed.  
