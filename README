@@ -1,0 +1,59 @@
+README
+
+############################  Simulate alignments with MNMs under empirical conditions #################
+
+BranchSites_MNMSimulations_null.bf is the HYPHY batch file to simulate 50 replicate alignments with MNMs under the 
+BS+MNM null model, using empirically derived parameter estimates
+
+This batch file can only be run from the command-line. It executes the following steps:
+
+	- Take an input alignment file (eg: knownGene.uc001hmo.1.1.testHyPhyBS)
+	- Estimate BS+MNM null model parameters
+	- Simulate 50 replicate alignments, each 5K codon long, using these null model parameters
+	- Write out 50 replicate alignments at this length 
+
+*Notes
+
+i) The example test alignment file is hardcoded in this batch file, and included. 
+ii)Please adjust the path structures to HyPhy library files depending on where the HYPHYMP executable is installed 
+on your machine.
+iii) This batch file simulates 5K codon long alignments, which are easily amenable to any change (see batch file for directions)
+
+Run the batch file as <PATH TO HYPHYMP> BranchSites_MNMSimulations_null.bf
+	
+
+########################### BS+MNM Selection tests ######################################################
+
+HYPHY batch files to run the BS+MNM selection test and estimate k2 under the BS+MNM+k2 model
+These can only be run from the command-line.
+
+i)   BranchSites_delta_null.bf: YangNielsenBranchSite Null Model with delta (BS+MNM null)
+ii)  BranchSites_delta_alt.bf: YangNielsenBranchSite Alt Model with delta (BS+MNM alt)
+ii)  BranchSites_delta_kappa2.bf: YangNielsenBranchSiteModel with delta and kappa2 (BS+MNM+k2)  
+
+
+Example 
+
+<path to HYPHYMP> BranchSites_delta.null.bf
+<path to HYPHYMP> BranchSites_delta_alt.bf
+<path to HYPHYMP> BranchSites_delta_kappa2.bf
+
+Adjust the path structure depending on where the executable HYPHYMP is installed.  
+
+Input alignment file should be formatted as you normally would for a HYPHY run, with tree included at the end. 
+
+Example input alignment file:
+
+#hg18
+ATGGGCATGAGTAGCTTGAAACTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#panTro2
+ATGGGCATGAGTAGCTTGAAACTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#rheMac2
+ATGGGCATGAGTAGCTTGAAATTGCTGAAGTATGTCCTGTTTTTCTTCAACTTGCTCTTTTGGATCTGTG
+#mm8
+ATGGGCATGAGCAGCCTGAAATTGCTGAAATATGTTCTGTTTATCTTTAACTTGCTTTTTTGGGTCTGTG
+#rn4
+ATGGGCATGAGCAGCCTGAAATTGCTGAAATATGTTCTGTTTTTCTTTAACTTTCTTTTTTGGGTCTGTG
+#canFam2
+ATGGGCATGAGTGGCTTGAAGTTGCTGAAGTACGTTCTGTTTTTCTTCAACTTGCTTTTTTGGTTCTGTG
+(((hg18, panTro2),rheMac2),(mm8,rn4),canFam2);
